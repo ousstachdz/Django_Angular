@@ -43,6 +43,7 @@ coverage.xml
 
 # VirtualEnv
 .venv/
+migrations/
 
 # Developers
 *.sw*
@@ -51,3 +52,5 @@ manage.py
 
 # example database
 drf_example
+
+db.sqlite3
