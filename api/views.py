@@ -32,3 +32,11 @@ class UserDetail(APIView):
         # }
         serializer = UserSerializer(User.objects.get(pk=request.user.id))
         return Response(serializer.data)
+
+class MessageDetail(APIView):
+    
+    def get(self, request ):
+        content={
+            'message': 'public'
+        }
+        return Response(content)

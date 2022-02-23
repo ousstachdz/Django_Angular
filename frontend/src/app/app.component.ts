@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from './services/message/service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  msg:any ;
+  constructor(private service:ServiceService){}
+
+  ngOnInit():void{
+    this.showMessage()
+  }
+
+  showMessage(){
+    this.service.getMessage().subscribe(data=>{
+      this.msg = data;
+      this.msg = this.msg.message
+    })
+  }
+
+
 }
